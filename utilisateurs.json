@@ -1,0 +1,41 @@
+{
+        "_id" : 1,
+        "login" : "jcvd",
+        "password" : "1646464",
+        "firstname" : "J-C",
+        "lastname" : "Van Damme",
+        "role" : "admin"
+}
+{
+        "_id" : 2,
+        "login" : "macgy",
+        "password" : "12356789",
+        "firstname" : "Angus",
+        "lastname" : "MacGyver",
+        "role" : "rh"
+}
+{
+        "_id" : 3,
+        "login" : "mac",
+        "password" : "abcd123",
+        "firstname" : "Angus2",
+        "lastname" : "MacGyver",
+        "role" : "rh"
+}
+{
+        "_id" : 4,
+        "login" : "azer",
+        "password" : "tyuiop",
+        "firstname" : "Chuck",
+        "lastname" : "Norris",
+        "role" : "compta"
+}
+{
+        "_id" : 5,
+        "login" : "jambon",
+        "password" : "beurre",
+        "firstname" : "Jean",
+        "lastname" : "Le Bon",
+        "role" : "compta"
+}
+
