@@ -1,0 +1,30 @@
+<div>
+  <a class="chat-btn floating-btn" (click)="showChatWindow()"><i class="material-icons">chat</i></a>
+</div>
+<div class="chat-window rounded-lg" *ngIf="isChatOpen">
+  <div class="chat-header d-flex justify-content-between">
+    <div>
+      <a class="chat-header-btn"><i class="material-icons" *ngIf="isConvOpen" (click)="showConversationsList()">arrow_back</i></a>
+      <span>{{title}}</span>
+    </div>
+    <div>
+      <a class="chat-header-btn"><i class="material-icons">build</i></a>
+      <a class="chat-header-btn"><i class="material-icons">add_comment</i></a>
+    </div>
+  </div>
+  <div class="chat-body">
+    <div class="conv-list" *ngIf="!isConvOpen">
+      <div class="conv-item" *ngFor="let conv of conversations" (click)="showConversation(conv._id)">
+        <span>{{conv.name}}</span>
+      </div>
+    </div>
+    <div class="messages" *ngIf="isConvOpen">
+      <div>
+      </div>
+      <div>
+        <input type="text"/>
+        <a class="floating-btn">Send</a>
+      </div>
+    </div>
+  </div>
+</div>
