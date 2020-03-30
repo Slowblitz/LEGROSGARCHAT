@@ -12,6 +12,8 @@ export class ChatComponent implements OnInit {
 
   isChatOpen = false;
   isConvOpen = false;
+  isColorPickerOpen = false;
+  currentColor = 'blue';
   title = 'Chat';
   conversations = [
     {
@@ -32,9 +34,14 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const color = localStorage.getItem('color');
+    if (color) {
+      this.currentColor = color;
+    }
   }
 
   showChatWindow(): void {
+    this.isColorPickerOpen = false;
     this.isChatOpen = !this.isChatOpen;
   }
 
@@ -42,7 +49,18 @@ export class ChatComponent implements OnInit {
     this.isConvOpen = true;
   }
 
-  showConversationsList(): void {
+  showConversationsList($event?): void {
+    $event.stopPropagation();
     this.isConvOpen = false;
+  }
+
+  showColorPicker($event?): void {
+    $event.stopPropagation();
+    this.isColorPickerOpen = !this.isColorPickerOpen;
+  }
+
+  changeColor(color: string) {
+    this.currentColor = color;
+    localStorage.setItem('color', this.currentColor);
   }
 }

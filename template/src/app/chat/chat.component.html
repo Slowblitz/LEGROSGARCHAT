@@ -1,14 +1,14 @@
 <div>
-  <a class="chat-btn floating-btn" (click)="showChatWindow()"><i class="material-icons">chat</i></a>
+  <a class="chat-btn floating-btn" [ngClass]="currentColor" (click)="showChatWindow()"><i class="material-icons">chat</i></a>
 </div>
 <div class="chat-window rounded-lg" *ngIf="isChatOpen">
-  <div class="chat-header d-flex justify-content-between">
-    <div>
-      <a class="chat-header-btn"><i class="material-icons" *ngIf="isConvOpen" (click)="showConversationsList()">arrow_back</i></a>
+  <div class="chat-header d-flex justify-content-between" [ngClass]="currentColor" (click)="showChatWindow()">
+    <div class="d-flex">
+      <a class="chat-header-btn"><i class="material-icons" *ngIf="isConvOpen" (click)="showConversationsList($event)">arrow_back</i></a>
       <span>{{title}}</span>
     </div>
-    <div>
-      <a class="chat-header-btn"><i class="material-icons">build</i></a>
+    <div class="d-flex">
+      <a class="chat-header-btn" (click)="showColorPicker($event)"><i class="material-icons">build</i></a>
       <a class="chat-header-btn"><i class="material-icons">add_comment</i></a>
     </div>
   </div>
@@ -27,4 +27,9 @@
       </div>
     </div>
   </div>
+</div>
+<div class="color-picker d-flex justify-content-between" *ngIf="isColorPickerOpen">
+  <a class="color-picker-item" style="background-color: #55a7ff" (click)="changeColor('blue')"></a>
+  <a class="color-picker-item" style="background-color: #ff5656" (click)="changeColor('red')"></a>
+  <a class="color-picker-item" style="background-color: #007849" (click)="changeColor('green')"></a>
 </div>
