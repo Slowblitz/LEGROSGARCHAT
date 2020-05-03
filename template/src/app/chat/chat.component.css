@@ -39,6 +39,29 @@ button.floating-btn, input.floating-btn {
 }
 
 
+.blue {
+  background-color: #55a7ff !important;
+}
+
+.red {
+  background-color: #ff5656 !important;
+}
+
+.green {
+  background-color: #007849 !important;
+}
+
+a.blue:hover, button.blue:hover {
+  background-color: #2d95ff !important;
+}
+
+a.red:hover, button.red:hover {
+  background-color: #ff4d4a !important;
+}
+
+a.green:hover, button.green:hover {
+  background-color: #00925f !important;
+}
 
 
 .chat-btn {
@@ -47,7 +70,7 @@ button.floating-btn, input.floating-btn {
   right: 2rem;
   background-color: #55a7ff;
   z-index: 1000;
-}
+}/*
 
 .chat-btn.blue {
   background-color: #55a7ff;
@@ -75,10 +98,12 @@ button.floating-btn, input.floating-btn {
 
 .chat-btn.green:hover {
   background-color: #00925f;
-}
+}*/
 
 .chat-window {
   /*display: none;*/
+  display: flex;
+  flex-direction: column;
   position: fixed;
   bottom: 6rem;
   right: 2rem;
@@ -97,7 +122,7 @@ button.floating-btn, input.floating-btn {
   color: white;
 }
 
-.chat-header.blue {
+/*.chat-header.blue {
   background-color: #55a7ff;
 }
 
@@ -107,7 +132,7 @@ button.floating-btn, input.floating-btn {
 
 .chat-header.green {
   background-color: #007849;
-}
+}*/
 
 .chat-header-btn {
   margin: 0 0.5rem;
@@ -120,6 +145,7 @@ button.floating-btn, input.floating-btn {
 }
 
 .chat-body {
+  flex: 1;
   /*padding: 0.5rem;*/
 }
 
@@ -149,4 +175,54 @@ button.floating-btn, input.floating-btn {
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.msg-box {
+  flex: 1;
+}
+
+.msg-form {
+  display: flex;
+}
+
+.msg-form > * {
+  margin: 10px 5px;
+}
+
+.msg-form > input {
+  flex: 1;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 50rem;
+}
+
+.msg-form > a {
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 50rem;
+  color: white;
+  cursor: pointer;
+  width: 3rem;
+}
+
+.msg-form > input.blue {
+  background-color: transparent !important;
+  border-color: #55a7ff !important;
+}
+
+.msg-form > input.red {
+  background-color: transparent !important;
+  border-color: #ff5656 !important;
+}
+
+.msg-form > input.green {
+  background-color: transparent !important;
+  border-color: #007849 !important;
 }

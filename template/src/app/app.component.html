@@ -1,4 +1,20 @@
-<div class="container-scroller">
+<div *ngIf="username == null">
+  <form (submit)="login()">
+    <label>
+      Nom :
+<!--      <input class="login-input" type="text">-->
+      <select class="login-input">
+        <option>Timidou</option>
+        <option>ElPadre</option>
+        <option>LeGrosGarcia</option>
+      </select>
+    </label>
+    <input type="submit" value="Se connecter">
+  </form>
+
+</div>
+
+<div *ngIf="username != null" class="container-scroller">
   <app-navbar></app-navbar>
   <div class="container-fluid page-body-wrapper">
     <app-sidebar></app-sidebar>
@@ -9,5 +25,6 @@
       <app-footer></app-footer>
     </div>
   </div>
+  <app-chat></app-chat>
 </div>
-<app-chat></app-chat>
+

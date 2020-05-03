@@ -14,17 +14,18 @@
   </div>
   <div class="chat-body">
     <div class="conv-list" *ngIf="!isConvOpen">
-      <div class="conv-item" *ngFor="let conv of conversations" (click)="showConversation(conv._id)">
-        <span>{{conv.name}}</span>
+      <div *ngFor="let conv of conversations">
+        <div *ngIf="username != conv.name" class="conv-item" (click)="showConversation(conv._id)">
+          <span>{{conv.name}}</span>
+        </div>
       </div>
     </div>
     <div class="messages" *ngIf="isConvOpen">
-      <div>
-      </div>
-      <div>
-        <input type="text"/>
-        <a class="floating-btn">Send</a>
-      </div>
+      <div class="msg-box"></div>
+      <form class="msg-form" (submit)="submitMessage($event)">
+        <input #msgInput class="msg-input" [ngClass]="currentColor" type="text"/>
+        <a [ngClass]="currentColor" (click)="submitMessage($event)"><span class="material-icons">send</span></a>
+      </form>
     </div>
   </div>
 </div>
